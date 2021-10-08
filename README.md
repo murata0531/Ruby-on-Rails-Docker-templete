@@ -1,24 +1,21 @@
-# README
+# Ruby-on-Rails-Docker-templete
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Ruby on Railsのdockerテンプレート
 
-Things you may want to cover:
+# 構築
 
-* Ruby version
+```
+$ docker-compose up -d --build
 
-* System dependencies
+$ docker-compose exec web bash
 
-* Configuration
+bash# curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
 
-* Database creation
+bash# echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
 
-* Database initialization
+bash# apt update && apt install yarn
 
-* How to run the test suite
+bash# webpacker:install
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+bash# rails s -b 0.0.0.0
+```
